@@ -1,0 +1,64 @@
+[
+  {
+    "experiment": "A. Behavioural features (honest)",
+    "n_features": 14,
+    "accuracy": 0.9961919299991141,
+    "balanced_accuracy": 0.9793439913912684,
+    "macro_f1": 0.9567533394345815,
+    "normal_recall": 0.9813084112149533,
+    "false_positive_rate": 0.018691588785046728,
+    "attack_detection_rate": 0.9999768265453286,
+    "normal_flows_in_test": 107,
+    "top_features": [
+      "srate (0.27)",
+      "N_IN_Conn_P_DstIP (0.13)",
+      "stddev (0.12)"
+    ]
+  },
+  {
+    "experiment": "B. Behavioural + identifiers (leaky)",
+    "n_features": 20,
+    "accuracy": 0.9999877334896178,
+    "balanced_accuracy": 0.9999952416336564,
+    "macro_f1": 0.9919258719158911,
+    "normal_recall": 1.0,
+    "false_positive_rate": 0.0,
+    "attack_detection_rate": 0.9999877317004681,
+    "normal_flows_in_test": 107,
+    "top_features": [
+      "pkSeqID (0.37)",
+      "dport (0.14)",
+      "daddr (0.09)"
+    ]
+  },
+  {
+    "experiment": "C. Row ID only (pkSeqID)",
+    "n_features": 1,
+    "accuracy": 0.9999972741088039,
+    "balanced_accuracy": 0.9999883827482219,
+    "macro_f1": 0.9990636991323214,
+    "normal_recall": 1.0,
+    "false_positive_rate": 0.0,
+    "attack_detection_rate": 0.9999986368556075,
+    "normal_flows_in_test": 107,
+    "top_features": [
+      "pkSeqID (1.00)"
+    ]
+  },
+  {
+    "experiment": "D. Without whole-capture connection counts",
+    "n_features": 12,
+    "accuracy": 0.9943383239857981,
+    "balanced_accuracy": 0.8619988188798828,
+    "macro_f1": 0.7637805951853034,
+    "normal_recall": 0.7850467289719626,
+    "false_positive_rate": 0.21495327102803738,
+    "attack_detection_rate": 0.9999809159785059,
+    "normal_flows_in_test": 107,
+    "top_features": [
+      "srate (0.32)",
+      "max (0.15)",
+      "stddev (0.14)"
+    ]
+  }
+]
