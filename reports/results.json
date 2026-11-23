@@ -166,5 +166,47 @@
     "attack_detection_rate": 0.9998854958710356,
     "normal_flows_in_test": 107,
     "train_seconds": 13.683557987213135
+  },
+  {
+    "model": "RNN (LSTM)",
+    "accuracy": 0.8950600036799531,
+    "balanced_accuracy": 0.9317905938705655,
+    "macro_f1": 0.5232731728900493,
+    "per_class": {
+      "Normal": {
+        "precision": 0.05849268841394826,
+        "recall": 0.9719626168224299,
+        "f1-score": 0.1103448275862069,
+        "support": 107.0
+      },
+      "DDoS": {
+        "precision": 0.94011844152368,
+        "recall": 0.8750924582607725,
+        "f1-score": 0.9064407426673495,
+        "support": 385309.0
+      },
+      "DoS": {
+        "precision": 0.8927180172798826,
+        "recall": 0.9142684906940675,
+        "f1-score": 0.9033647464130873,
+        "support": 330112.0
+      },
+      "Reconnaissance": {
+        "precision": 0.5186374753219201,
+        "recall": 0.9690579750041293,
+        "f1-score": 0.675662188099808,
+        "support": 18163.0
+      },
+      "Theft": {
+        "precision": 0.010391686650679457,
+        "recall": 0.9285714285714286,
+        "f1-score": 0.020553359683794466,
+        "support": 14.0
+      }
+    },
+    "false_positive_rate": 0.028037383177570093,
+    "attack_detection_rate": 0.9977180962870673,
+    "normal_flows_in_test": 107,
+    "train_seconds": 46.35498404502869
   }
 ]
