@@ -51,9 +51,9 @@ def encode_with_identifiers(train_df, test_df, columns=None):
     for col in X_tr.columns:
         if col == "proto" or pd.api.types.is_numeric_dtype(X_tr[col]):
             continue
-        categories = pd.Index(X_tr[col].astype(str).unique())
-        X_tr[col] = pd.Categorical(X_tr[col].astype(str), categories=categories).codes
-        X_te[col] = pd.Categorical(X_te[col].astype(str), categories=categories).codes
+        codes = {value: i for i, value in enumerate(X_tr[col].astype(str).unique())}
+        X_tr[col] = X_tr[col].astype(str).map(codes).astype(int)
+        X_te[col] = X_te[col].astype(str).map(codes).fillna(-1).astype(int)
     if "proto" in X_tr.columns:
         X_tr = pd.get_dummies(X_tr, columns=["proto"], prefix="proto", dtype=float)
         X_te = pd.get_dummies(X_te, columns=["proto"], prefix="proto", dtype=float)

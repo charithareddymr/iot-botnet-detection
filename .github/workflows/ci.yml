@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # PyTorch is only needed for src/train_rnn.py, which the tests don't import
+      - name: Install dependencies
+        run: pip install pandas scikit-learn matplotlib pytest
+      - name: Run tests
+        run: python -m pytest -v
